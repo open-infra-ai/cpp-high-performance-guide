@@ -281,7 +281,7 @@ cmake --build build/tsan
 ctest --preset=tsan
 ```
 
-preset 强制使用 Clang（`CC=clang CXX=clang++`），并配置 `TSAN_OPTIONS=halt_on_error=1`。TSan 和 ASan 不能同时使用。
+preset 强制使用 Clang（`CC=clang CXX=clang++`），并配置 `TSAN_OPTIONS=halt_on_error=1:ignore_noninstrumented_modules=1`（后者屏蔽 OpenMP 运行时等未插桩模块的已知误报）。TSan 和 ASan 不能同时使用。
 
 ### UndefinedBehaviorSanitizer（UBSan）
 

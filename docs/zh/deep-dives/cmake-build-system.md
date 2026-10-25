@@ -108,7 +108,7 @@ endfunction()
   "name": "tsan",
   "configurePreset": "tsan",
   "environment": {
-    "TSAN_OPTIONS": "halt_on_error=1"
+    "TSAN_OPTIONS": "halt_on_error=1:ignore_noninstrumented_modules=1"
   }
 }
 ```
