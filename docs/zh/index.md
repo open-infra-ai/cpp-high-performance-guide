@@ -11,7 +11,7 @@ hero:
       link: /zh/getting-started
     - theme: alt
       text: GitHub
-      link: https://github.com/LessUp/cpp-high-performance-guide
+      link: https://github.com/open-infra-ai/cpp-high-performance-guide
 
 features:
   - title: 深度专题

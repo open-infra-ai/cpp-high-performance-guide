@@ -217,8 +217,8 @@ macOS 没有 Linux `perf` 工具。替代方案：
 
 ## 获取帮助
 
-1. **搜索现有问题**：[GitHub Issues](https://github.com/LessUp/cpp-high-performance-guide/issues)
-2. **参与讨论**：[GitHub Discussions](https://github.com/LessUp/cpp-high-performance-guide/discussions)
+1. **搜索现有问题**：[GitHub Issues](https://github.com/open-infra-ai/cpp-high-performance-guide/issues)
+2. **参与讨论**：[GitHub Discussions](https://github.com/open-infra-ai/cpp-high-performance-guide/discussions)
 3. **创建新 Issue**，请包含：
    - 操作系统和版本
    - 编译器版本（`g++ --version`）

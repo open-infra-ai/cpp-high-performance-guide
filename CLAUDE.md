@@ -2,7 +2,7 @@
 
 ## Project position
 
-This repository is under **active development**. The canonical header-only library lives in `include/hpc/` (consumed via the `hpc_headers` INTERFACE target); example and demo code lives in `examples/` and depends only on the canonical library, never the reverse. Prefer normalization, defect fixing, and removal of stale or low-signal surfaces over accumulating redundant surfaces.
+This repository is in **stable maintenance** (feature work paused since 2026-08; correctness fixes and documentation only). The canonical header-only library lives in `include/hpc/` (consumed via the `hpc_headers` INTERFACE target); example and demo code lives in `examples/` and depends only on the canonical library, never the reverse. Prefer normalization, defect fixing, and removal of stale or low-signal surfaces over accumulating redundant surfaces.
 
 ## C++ Standards and Style
 

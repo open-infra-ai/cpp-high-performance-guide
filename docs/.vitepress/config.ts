@@ -36,7 +36,7 @@ export default defineConfig({
       description: siteDescription,
       themeConfig: {
         editLink: {
-          pattern: 'https://github.com/LessUp/cpp-high-performance-guide/edit/master/docs/:path',
+          pattern: 'https://github.com/open-infra-ai/cpp-high-performance-guide/edit/master/docs/:path',
           text: '在 GitHub 上编辑此页',
         },
         footer: {
@@ -121,7 +121,7 @@ export default defineConfig({
       dark: '/logo.svg',
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/LessUp/cpp-high-performance-guide' },
+      { icon: 'github', link: 'https://github.com/open-infra-ai/cpp-high-performance-guide' },
     ],
   },
 })

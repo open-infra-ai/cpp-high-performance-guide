@@ -18,7 +18,7 @@
   <text x="96" y="338" fill="#D7E6FF" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="600">Runnable C++ performance engineering docs with explicit validation.</text>
   <text x="96" y="388" fill="#91A9CC" font-family="Inter, Arial, sans-serif" font-size="24">CMake presets · Sanitizers · Profiling · SIMD · Concurrency · Benchmark evidence</text>
   <rect x="96" y="504" width="238" height="42" rx="21" fill="#17315F"/>
-  <text x="128" y="532" fill="#EAF2FF" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600">lessup.github.io</text>
+  <text x="128" y="532" fill="#EAF2FF" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600">open-infra-ai.github.io</text>
   <rect x="860" y="504" width="244" height="42" rx="21" fill="#102446" stroke="#355C9B"/>
   <text x="894" y="532" fill="#BFD6FF" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600">Archive-ready docs</text>
   <defs>

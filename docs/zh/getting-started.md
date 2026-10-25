@@ -18,7 +18,7 @@
 ## 构建与验证
 
 ```bash
-git clone https://github.com/LessUp/cpp-high-performance-guide.git
+git clone https://github.com/open-infra-ai/cpp-high-performance-guide.git
 cd cpp-high-performance-guide
 
 cmake --preset=release

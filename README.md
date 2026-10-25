@@ -1,11 +1,11 @@
 # C++ 高性能指南
 
 <p align="center">
-  <a href="https://github.com/LessUp/cpp-high-performance-guide/stargazers">
-    <img src="https://img.shields.io/github/stars/LessUp/cpp-high-performance-guide?style=flat-square&color=yellow" alt="Stars">
+  <a href="https://github.com/open-infra-ai/cpp-high-performance-guide/stargazers">
+    <img src="https://img.shields.io/github/stars/open-infra-ai/cpp-high-performance-guide?style=flat-square&color=yellow" alt="Stars">
   </a>
-  <a href="https://github.com/LessUp/cpp-high-performance-guide/actions/workflows/ci.yml">
-    <img src="https://img.shields.io/github/actions/workflow/status/LessUp/cpp-high-performance-guide/ci.yml?branch=master&label=CI&style=flat-square" alt="CI">
+  <a href="https://github.com/open-infra-ai/cpp-high-performance-guide/actions/workflows/ci.yml">
+    <img src="https://img.shields.io/github/actions/workflow/status/open-infra-ai/cpp-high-performance-guide/ci.yml?branch=master&label=CI&style=flat-square" alt="CI">
   </a>
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square" alt="License">
@@ -13,12 +13,15 @@
 </p>
 
 <p align="center">
-  <a href="https://lessup.github.io/cpp-high-performance-guide/">文档站</a> | <a href="https://github.com/LessUp/cpp-high-performance-guide/discussions">讨论</a>
+  <a href="https://open-infra-ai.github.io/cpp-high-performance-guide/">文档站</a> | <a href="https://github.com/open-infra-ai/cpp-high-performance-guide/discussions">讨论</a>
 </p>
 
 <p align="center">
   通过可运行示例、基准测试和 VitePress 文档站，学习可验证的现代 C++20 性能工程。
 </p>
+
+> **项目状态**：**stable**。教学作品完成，只修正确性 bug 与文档；权威状态注册表见
+> [open-infra-ai/open-infra-ai](https://github.com/open-infra-ai/open-infra-ai)。
 
 ## 这个仓库解决什么问题
 
@@ -55,7 +58,7 @@
 ## 快速开始
 
 ```bash
-git clone https://github.com/LessUp/cpp-high-performance-guide.git
+git clone https://github.com/open-infra-ai/cpp-high-performance-guide.git
 cd cpp-high-performance-guide
 
 cmake --preset=release
@@ -81,7 +84,7 @@ cmake --preset=ubsan && cmake --build build/ubsan && ctest --preset=ubsan
 
 ## 文档入口
 
-- **文档站：** <https://lessup.github.io/cpp-high-performance-guide/>
+- **文档站：** <https://open-infra-ai.github.io/cpp-high-performance-guide/>
 - **深度专题：** [`docs/zh/deep-dives/`](docs/zh/deep-dives/)
 - **API 参考：** [`docs/zh/reference/api.md`](docs/zh/reference/api.md)
 

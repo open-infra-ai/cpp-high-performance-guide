@@ -25,7 +25,7 @@ concurrency:
 jobs:
   build-and-deploy:
     # Only run on the original repository, not on forks
-    if: github.repository == 'LessUp/cpp-high-performance-guide'
+    if: github.repository == 'open-infra-ai/cpp-high-performance-guide'
     runs-on: ubuntu-latest
     # Bind the github-pages environment only when deploying (push /
     # workflow_dispatch); skip it on pull requests, which only build+test.
