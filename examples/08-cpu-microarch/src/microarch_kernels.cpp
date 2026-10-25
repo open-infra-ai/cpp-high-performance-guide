@@ -1,5 +1,17 @@
 #include "microarch_kernels.hpp"
 
+// GCC builds compile this translation unit with -fno-if-conversion (see the
+// module CMakeLists) so that sum_branched keeps a real branch. That flag
+// would also demote sum_ternary's ternary to a branch, defeating the demo,
+// so sum_ternary re-enables if-conversion via this macro. clang has no
+// -fno-if-conversion (it errors out on the flag), so the macro is empty
+// there and clang's default if-conversion applies.
+#if defined(__GNUC__) && !defined(__clang__)
+#define MICROARCH_ENABLE_IF_CONVERSION __attribute__((optimize("if-conversion")))
+#else
+#define MICROARCH_ENABLE_IF_CONVERSION
+#endif
+
 namespace microarch {
 
 long long sum_branched(const int* data, std::size_t n, int threshold) {
@@ -12,13 +24,10 @@ long long sum_branched(const int* data, std::size_t n, int threshold) {
     return sum;
 }
 
-// This translation unit is compiled with -fno-if-conversion (see the module
-// CMakeLists) so that sum_branched keeps a real branch. That flag would also
-// demote this ternary to a branch, so re-enable if-conversion for this one
-// function: the point of the demo is exactly "branch vs cmov".
-#if defined(__GNUC__) && !defined(__clang__)
-__attribute__((optimize("if-conversion")))
-#endif
+// The point of the demo is exactly "branch vs cmov": unlike sum_branched,
+// this ternary lowers to a conditional move (no control-flow dependency,
+// nothing to mispredict) once if-conversion is re-enabled for this function.
+MICROARCH_ENABLE_IF_CONVERSION
 long long sum_ternary(const int* data, std::size_t n, int threshold) {
     long long sum = 0;
     for (std::size_t i = 0; i < n; ++i) {
