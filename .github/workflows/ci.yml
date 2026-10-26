@@ -64,6 +64,42 @@ jobs:
       - name: Test (benchmark label excluded via test preset)
         run: ctest --preset=debug
 
+  linux-release-gcc:
+    name: Linux Release (GCC)
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      CC: gcc-12
+      CXX: g++-12
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Cache CMake dependencies
+        uses: actions/cache@v5
+        with:
+          path: |
+            build/release/_deps
+            ~/.cache/ccache
+          key: cmake-deps-${{ runner.os }}-gcc-release-${{ hashFiles('cmake/Dependencies.cmake') }}
+          restore-keys: |
+            cmake-deps-${{ runner.os }}-gcc-
+            cmake-deps-${{ runner.os }}-
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ninja-build gcc-12 g++-12 libomp-dev
+
+      - name: Configure
+        run: cmake --preset=release
+
+      - name: Build
+        run: cmake --build --preset release
+
+      - name: Test (benchmark label excluded via test preset)
+        run: ctest --preset=release
+
   sanitizers:
     name: Sanitizers (${{ matrix.preset }})
     runs-on: ubuntu-latest

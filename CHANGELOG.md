@@ -21,6 +21,8 @@
 
 ### Changed
 
+- CI 新增 **Linux Release (GCC)** job：`release` 预设构建并运行测试（benchmark
+  label 由 test preset 排除），补齐此前只有 debug 与 sanitizer 的覆盖。
 - 徽章、克隆地址、文档站链接、OG 分享卡与 Pages 部署守卫由旧个人账号
   （LessUp）统一为 `open-infra-ai` 组织；文档站恢复自动部署。
 - README 登记 **stable** 状态行；CLAUDE.md 的技术约定并入 AGENTS.md

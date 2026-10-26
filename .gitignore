@@ -226,5 +226,7 @@ proposals.md
 task_plan.md
 .qwen/
 .qoder/
-.agents/
+.agents/*
+!.agents/notes/
+!.agents/notes/**
 .codex/
