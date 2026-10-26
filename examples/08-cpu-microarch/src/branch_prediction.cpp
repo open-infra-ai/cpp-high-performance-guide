@@ -64,7 +64,7 @@ int main() {
     // Reference numbers on the random (unpredictable) order.
     const long long expect = microarch::sum_branched(data.data(), data.size(), kThreshold);
 
-    double t = 0.0;
+    long long t = 0;
     const double branched_unsorted =
         best_of([&] { t = microarch::sum_branched(data.data(), data.size(), kThreshold); });
     if (t != expect) {
