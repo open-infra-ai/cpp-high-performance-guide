@@ -1,5 +1,7 @@
 # C++ 高性能指南
 
+> 📚 Portfolio map: <https://github.com/open-infra-ai/open-infra-ai>
+
 <p align="center">
   <a href="https://github.com/open-infra-ai/cpp-high-performance-guide/stargazers">
     <img src="https://img.shields.io/github/stars/open-infra-ai/cpp-high-performance-guide?style=flat-square&color=yellow" alt="Stars">
