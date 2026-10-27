@@ -7,13 +7,15 @@
 
 ### Fixed
 
-- `branch_prediction.cpp` 的累计和变量 `t` 由 `double` 改为 `long long`：内核
-  返回 `long long`，此前的隐式往返转换在 `-Wconversion` 下产生 12 个警告；
-  改后自建代码零警告。
-- rapidcheck（pinned 第三方）的 include 目录改挂
-  `INTERFACE_SYSTEM_INCLUDE_DIRECTORIES`（`set_property` 列表形式，CMake 3.20
-  兼容；3.25+ 可用 `FetchContent_Declare(SYSTEM)` 替代），其头文件内的
-  `-Wconversion` / `-Wsign-compare` 不再进入我们的构建日志。
+- `branch_prediction.cpp` 的累计和变量 `t` 由 `double` 改为 `long long`
+  （`3c0c159`，维护者提交）：内核返回 `long long`，此前的隐式往返转换在
+  `-Wconversion` 下产生 12 个警告。本批在其之上完成零警告收尾：
+  rapidcheck（pinned 第三方）的 include 目录经
+  `INTERFACE_SYSTEM_INCLUDE_DIRECTORIES` 标记为 system（该属性是对既有
+  include 条目的标记而非独立来源，与 googletest 同机制；CMake 3.20 兼容，
+  3.25+ 可用 `FetchContent_Declare(SYSTEM)` 替代），其头文件内的
+  `-Wconversion` / `-Wsign-compare` 不再进入构建日志；debug 全量构建
+  （含第三方）0 警告。
 - 08-cpu-microarch 在 clang 构建下不再传递 GCC 专属 `-fno-if-conversion`：
   tsan 预设强制使用 clang，此前因该参数构建失败，CI 自 2026-08-06 起为红灯。
 - `sum_ternary` 的 GCC `optimize` 属性改由 `MICROARCH_ENABLE_IF_CONVERSION`
