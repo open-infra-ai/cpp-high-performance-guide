@@ -72,8 +72,23 @@ function(hpc_fetch_rapidcheck)
     # Enable GTest integration
     set(RC_ENABLE_GTEST ON CACHE BOOL "" FORCE)
     set(RC_ENABLE_GMOCK ON CACHE BOOL "" FORCE)
-    
+
     FetchContent_MakeAvailable(rapidcheck)
-    
+
+    # Treat rapidcheck's headers as SYSTEM includes: warnings inside the
+    # pinned third-party commit (e.g. -Wconversion in Numeric.hpp) are not
+    # actionable here and drown out warnings in our own code. CMake 3.25+
+    # could pass SYSTEM to FetchContent_Declare directly; this repo supports
+    # 3.20, so mark the target's declared include dirs as SYSTEM instead.
+    # INTERFACE_SYSTEM_INCLUDE_DIRECTORIES is a marker over the dirs already
+    # listed in INTERFACE_INCLUDE_DIRECTORIES (same genex strings), not an
+    # independent source of includes — the same pattern googletest uses to
+    # get -isystem for its consumers.
+    get_target_property(rc_includes rapidcheck INTERFACE_INCLUDE_DIRECTORIES)
+    if(rc_includes)
+        set_property(TARGET rapidcheck
+            PROPERTY INTERFACE_SYSTEM_INCLUDE_DIRECTORIES ${rc_includes})
+    endif()
+
     message(STATUS "RapidCheck fetched successfully")
 endfunction()
